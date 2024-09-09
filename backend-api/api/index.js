@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 });
 
 readdirSync('./routes')
-.map((r)=> app.use('/', require('./routes/' + r)))
+.map((r)=> app.use('/api', require('./routes/' + r)))
 
 const port = process.env.PORT || 3301;
 app.listen(port, () => {
